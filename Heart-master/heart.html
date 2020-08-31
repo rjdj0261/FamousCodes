@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+      body {
+          background-color:black;
+      }
+      svg
+      {
+        position:absolute;
+        top:15%;
+        left:10%;
+        animation: bit 1s infinite;
+        -webkit-animation: bit 1s infinite;
+        transition:transform 1s;
+        -webkit-transition:transform 1s;
+        -webkit-animation-delay: 6s;
+        animation-delay: 6s;
+      }
+      #myHeart
+      {
+        stroke:red;
+        stroke-width:2px;
+        fill-opacity:0;
+      }
+
+      svg path
+      {
+        stroke:rgb(255,255,255);
+        stroke-dasharray:10;
+        stroke-dashoffset: 0;
+        stroke-width:3px;
+        fill-opacity:0;
+        animation: anim 12s linear forwards;
+        -webkit-animation: anim 12s linear forwards;
+      }
+
+
+      @keyframes anim
+      {
+       0%
+        {
+          stroke-dashoffset: 1000;
+          fill:rgba(255,0,0,0);
+        }50%{
+          stroke-dashoffset: 0;
+          fill:rgba(255,0,0,0);
+          fill-opacity:0;
+        }
+        100%
+        {
+          fill:rgba(255,0,0,1);
+          fill-opacity:1;
+        }
+      }
+
+      @-webkit-keyframes anim
+      {
+        0%
+        {
+          stroke-dashoffset: 1000;
+          fill:rgba(255,0,0,0);
+        }50%{
+          stroke-dashoffset: 0;
+          fill:rgba(255,0,0,0);
+          fill-opacity:0;
+        }
+        100%
+        {
+          fill:rgba(255,0,0,1);
+          fill-opacity:1;
+        }
+      }
+      @keyframes bit
+      {
+       0%{
+          transform:scale(1);
+        }
+        50%{
+          transform:scale(1.3);
+        }
+        100%{
+          transform:scale(1);
+        }
+      }
+
+      </style>
+      <title> Simple Heart Animation</title>
+    </head>
+    <body>
+        <svg version="2.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="70vw" height="70vh" viewbox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+   <path id="myHeart" d="M457.901,146.444C436.495,54.316,301.703,30.921,256,124.192
+
+    C210.297,30.921,75.506,54.314,54.099,146.444C19.256,296.402,216.886,364.586,256,447.25
+
+    C295.114,364.586,492.744,296.404,457.901,146.444z" />
+    </body>
+</html>

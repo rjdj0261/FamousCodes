@@ -1,0 +1,52 @@
+<html><head>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+  body {
+    background-color: #121212;
+    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQeyxIYiYoq8byY_GyK45kfjlsaAIQ3v7PPCXIRqR87EzE51ju3&usqp=CAU");
+  }
+
+  #clock {
+    font-family: 'Orbitron', sans-serif;
+    color: #66ff99;
+    font-size: 120px;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  </style>
+  <script>
+  function currentTime() {
+    var date = new Date(); /* creating object of Date class */
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
+    var midday = "AM";
+    midday = (hour >= 12) ? "PM" : "AM"; /* assigning AM/PM */
+    hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour); /* assigning hour in 12-hour format */
+    hour = updateTime(hour);
+    min = updateTime(min);
+    sec = updateTime(sec);
+    document.getElementById("clock").innerText = hour + " : " + min + " : " + sec + " " + midday; /* adding time to the div */
+      var t = setTimeout(currentTime, 1000); /* setting timer */
+  }
+
+  function updateTime(k) { /* appending 0 before time elements if less than 10 */
+    if (k < 10) {
+      return "0" + k;
+    }
+    else {
+      return k;
+    }
+  }
+
+  currentTime();
+
+  </script>
+</head>
+ <body>
+  <div id="clock"></div>
+
+</body></html>

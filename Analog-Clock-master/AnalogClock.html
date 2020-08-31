@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <title>  watch </title>
+    <style>
+    body{
+      margin-top: 50%;
+      padding: 0%;
+      background-color:#000;
+    }
+    #container{
+      height: 60vw;
+      width: 60vw;
+      background: url("https://i.ibb.co/Y2q0rCp/watch.png");
+      background-size:cover;
+      background-position:no-repeat ;
+      background-size: 100%;
+      margin: auto;
+      padding: 10%;
+      position: relative;
+    }
+    #hour,#minute, #second{
+      position: absolute;
+      border-radius: 10px;
+      transform-origin: bottom;
+    }
+    #hour{
+      background: green;
+      height: 20%;
+      width: 1.6%;
+      top: 32%;
+      left: 49.5%;
+      border-radius: 10px;
+    }
+    #minute{
+      border-radius: 10px;
+      background: blue;
+      height: 27%;
+      width: 1.4%;
+      top: 25%;
+      left: 49.5%;
+      opacity:.8;
+    }
+    #second{
+      border-radius: 10px;
+      background: red;
+      height: 34%;
+      width: 1%;
+      top: 18%;
+      left: 49.8%;
+      opacity:.7;
+    }
+    #centre{
+      position: absolute;
+      border-radius: 50%;
+      background: #aac;
+      height: 8%;
+      width: 8%;
+      top: 47.5%;
+      left: 46.5%;
+    }
+    </style>
+    <script>
+    setInterval(() =>{
+     d = new Date();
+     ht = d.getHours();
+     mt = d.getMinutes();
+     st = d.getSeconds();
+     hr = 30*ht + mt/2;
+     mr = 6*mt;
+     sr = 6*st;
+     hour.style.transform = `rotate(${hr}deg)`;
+     minute.style.transform = `rotate(${mr}deg)`;
+     second.style.transform = `rotate(${sr}deg)`;
+
+
+    },1000);
+
+    </script>
+    </head>
+    <body>
+      <div id="container">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        <div id="centre"></div>
+      </div>
+    </body>
+</html>

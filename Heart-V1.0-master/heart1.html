@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <style>
+            body{
+    padding:0px;
+    margin:0px;
+    background-color:#f3c2ff;
+    font-family: cursive;
+}
+.heart{
+    width:200px;
+    height:200px;
+    background-color:red;
+    position:absolute;
+    top:0%;
+    right:0%;
+    bottom:0%;
+    left:0%;
+    margin:auto;
+    /*margin-top:50%;*/
+    transform:rotate(45deg);
+    box-shadow:0 0 50px 5px rgba(0,0,0,5);
+    animation: sandeep 1s linear infinite alternate;
+}
+.heart::before{
+    content:"";
+    width:200px;
+    height:200px;
+    background-color: red;
+    position:absolute;
+    top:-50%;
+    border-radius:50%;
+}
+.heart::after{
+    content:"";
+    width:200px;
+    height:200px;
+    background-color: red;
+    position:absolute;
+    left:-50%;
+    border-radius:50%;
+
+}
+@keyframes sandeep{
+    0%{
+        transform: rotate(45deg) scale(1);
+    }
+    50%{
+        transform:rotate(45deg) scale(0.75);
+    }
+    100%{
+        transform:rotate(45deg) scale(1);
+    }
+}
+h1{
+    margin-top:120px;
+}
+        </style>
+        <div class="heart">
+        </div>
+    </body>
+</html>
