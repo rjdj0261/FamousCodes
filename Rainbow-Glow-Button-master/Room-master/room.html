@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            alert("Click on the switches and the book!")
+alert("Please don't mind if it looks a bit wierd due to different device width and height")
+
+var btn1Status = "off";
+var btn2Status = "off";
+
+window.onload = function() {
+    var t = setInterval(Head, 9000);
+    if (c > 0){
+        clearInterval(t);
+    }
+    var body = document.getElementById("body");
+    body.innerHTML += "<div id = 'buttons'><button id = 'btn1' class = 'btn' onclick = 'ButtonClick(1)'></button> <button id = 'btn2' class = 'btn' onclick = 'ButtonClick(2)'></button></div>";
+    var fan2 = document.getElementById("fan2");
+    fan2.innerHTML += "<div style = 'position:absolute;top:30%;left:30%;height:40%;width:40%;border-radius:50%;background:rgba(255, 255, 255, 0);border:2px solid black;z-index:11' id = 'p1'></div><div style = 'position:absolute;top:20%;left:20%;height:60%;width:60%;border-radius:100px;background:rgba(255, 255, 255, 0);border:2px solid black;z-index:11' id = 'p2'></div><div style = 'position:absolute;top:5%;left:5%;height:90%;width:90%;border-radius:100px;background:rgba(255, 255, 255, 0);border:2px solid black;z-index:11' id = 'p3'></div><div style = 'position:absolute;top:-13%;left:-13%;height:120%;width:120%;border-radius:150px;background:rgba(255, 255, 255, 0);border:5px solid black;z-index:11' id = 'p4'></div>";
+};
+
+var c = 0;
+function Head() {
+    c++;
+    var heading = document.getElementById("heading");
+    heading.style.top = "-100px";
+}
+
+function ButtonClick(number) {
+    var b = document.getElementById("btn"+number);
+    var body = document.getElementById("body");
+    var table = document.getElementById("table");
+    var bulb = document.getElementById("bulb");
+    var lamp1 = document.getElementById("lamp1");
+    var lamp2 = document.getElementById("lamp2");
+    var lamp3 = document.getElementById("lamp3");
+    var lamp4 = document.getElementById("lamp4");
+    var lamp5 = document.getElementById("lamp5");
+    var lamp6 = document.getElementById("lamp6");
+    var fan1 = document.getElementById("fan1");
+    var fan3 = document.getElementById("fan3");
+    var p1 = document.getElementById("p1");
+    var p2 = document.getElementById("p2");
+    var p3 = document.getElementById("p3");
+    var p4 = document.getElementById("p4");
+    var b2 = document.getElementById("b2");
+    var b3 = document.getElementById("b3");
+    var b4 = document.getElementById("b4");
+    var b5 = document.getElementById("b5");
+    var b7 = document.getElementById("b7");
+    var fan4 = document.getElementById("fan4");
+    var bookShadow = document.getElementById("bookShadow");
+    if (number === 1){
+        if (btn1Status === "off"){
+            b.style.background = "linear-gradient(0deg, #fff, #ddd)";
+            b.style.boxShadow = "1px -2px 3px #444";
+            body.style.background = "linear-gradient(245deg, #636363, #bbb)";
+            table.style.background = "linear-gradient(290deg, #d45, #c45)";
+            bulb.style.background = "#eea";
+            lamp1.style.background = "#333";
+            lamp2.style.background = "#444";
+            lamp3.style.background = "#333";
+            lamp2.style.border = "1px solid #444";
+            lamp6.style.border = "1px solid #444";
+            lamp4.style.border = "1px solid #333";
+            lamp5.style.border = "1px solid #333";
+            lamp6.style.background = "#444";
+            fan1.style.background = "#222";
+            fan3.style.background = "#222";
+            p1.style.border = "2px solid #222";
+            p2.style.border = "2px solid #222";
+            p3.style.border = "2px solid #222";
+            p4.style.border = "5px solid #222";
+            b2.style.background = "#555";
+            b3.style.background = "linear-gradient(180deg, #eee, #ccc)";
+            b4.style.background = "#424242";
+            b5.style.background = "linear-gradient(180deg, #ddd, #bbb)";
+            b7.style.background = "linear-gradient(180deg, #ddd, #bbb)";
+            fan4.style.display = "block";
+            bookShadow.style.display = "block";
+            btn1Status = "on";
+        }
+        else {
+            b.style.background = "linear-gradient(180deg, #fff, #ddd)";
+            b.style.boxShadow = "1px 2px 3px #444";
+            body.style.background = "linear-gradient(270deg, #636363, #555)";
+            table.style.background = "#b23";
+            bulb.style.background = "#442";
+            lamp1.style.background = "#111";
+            lamp2.style.background = "#222";
+            lamp3.style.background = "#111";
+            lamp6.style.background = "#222";
+            lamp4.style.border = "1px solid black";
+            lamp5.style.border = "1px solid black";
+            lamp5.style.borderTop = "none";
+            lamp2.style.border = "1px solid black";
+            lamp2.style.borderTop = "none";
+            lamp6.style.border = "1px solid black";
+            fan1.style.background = "#000";
+            fan3.style.background = "#000";
+            p1.style.border = "2px solid #000";
+            p2.style.border = "2px solid #000";
+            p3.style.border = "2px solid #000";
+            p4.style.border = "5px solid #000";
+            b2.style.background = "#444";
+            b3.style.background = "#a0a0a0";
+            b4.style.background = "#444";
+            b5.style.background = "#a0a0a0";
+            b7.style.background = "#a0a0a0";
+            fan4.style.display = "none";
+            bookShadow.style.display = "none";
+            btn1Status = "off";
+        }
+    }
+    else {
+        if (btn2Status === "off"){
+            b.style.background = "linear-gradient(0deg, #fff, #ddd)";
+            b.style.boxShadow = "1px -2px 3px #444";
+            btn2Status = "on";
+        }
+        else {
+            b.style.background = "linear-gradient(180deg, #fff, #ddd)";
+            b.style.boxShadow = "1px 2px 3px #444";
+            btn2Status = "off";
+        }
+        ForFan(btn2Status);
+    }
+}
+
+function ForFan(value) {
+    var fan = document.getElementById("spin");
+    if (value === "on"){
+        fan.style.animation = "MyFan linear 0.4s infinite";
+    }
+    else {
+        fan.style.animation = "none";
+        fan.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+    }
+}
+
+        </script>
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&family=Raleway&display=swap');
+
+body {
+    font-family: Raleway;
+    background: linear-gradient(270deg, #636363, #555);
+    overflow: hidden;
+    height: 2000px;
+    width: 100%;
+}
+
+#heading {
+    font-size: 30px;
+    padding: 30px;
+    top: 10px;
+    width: 78%;
+    position: absolute;
+    background-color: #d2e365;
+    border: 2px solid black;
+    text-align: center;
+    font-weight: 900;
+    animation: GoUp 5s ease 5s;
+}
+
+@keyframes GoUp {
+    to {top: -200px;}
+}
+
+#table {
+    perspective: 100px;
+    z-index: 0;
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    height: 250px;
+    width: 113%;
+    background-color: #a12;
+}
+
+.btn {
+    height: 40px;
+    width: 30px;
+    background: linear-gradient(180deg, #fff, #ddd);
+    box-shadow: 1px 2px 3px #555;
+    border: 0.1px solid black;
+}
+
+#buttons {
+    padding: 10px;
+    position: absolute;
+    top: 26%;
+    left: 10%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px #454545;
+}
+
+#lamp1 {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    height: 40%;
+    width: 10px;
+    background-color: #111;
+}
+
+#lamp2 {
+    z-index: 3;
+    position: absolute;
+    top: 90%;
+    left: 2px;
+    width: 50px;
+    height: 15px;
+    background-color: #222;
+    border: 1px solid black;
+    border-top: none;
+}
+
+#lamp3 {
+    z-index: 2;
+    position: absolute;
+    top: 44%;
+    left: 65px;
+    width: 10px;
+    height: 22%;
+    transform: rotate(60deg);
+    background-color: #111;
+}
+
+#lamp4 {
+    z-index: 2;
+    position: absolute;
+    top: 46%;
+    left: 100px;
+    height: 7%;
+    width: 60px;
+    border-radius: 50px;
+    background-color: #332;
+    transform: rotate(-15deg);
+    border: 1px solid black;
+}
+
+#bulb {
+    z-index: 1;
+    position: absolute;
+    top: 48%;
+    left: 120px;
+    height: 58px;
+    width: 30px;
+    border-radius: 30px;
+    background-color: #442;
+    transform: rotate(-15deg);
+}
+
+#lamp5 {
+    z-index: 4;
+    position: absolute;
+    top: 52%;
+    left: 100px;
+    height: 12px;
+    width: 65px;
+    transform: rotate(-15deg);
+    background-color: #332;
+    border: 1px solid black;
+    border-top: none;
+}
+
+#lamp6 {
+    z-index: 2;
+    position: absolute;
+    top: 88%;
+    left: 2px;
+    height: 20px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: #222;
+    border: 1px solid black;
+}
+
+#fan {
+    position: absolute;
+    top: 38%;
+    left: 65%;
+    height: 150px;
+    width: 150px;
+}
+
+#fanu {
+    z-index: 3;
+    height: 50%;
+    width: 12%;
+    left: 44%;
+    position: absolute;
+    background-color: white;
+    border-radius: 6px;
+}
+
+#fanl {
+    z-index: 3;
+    height: 12%;
+    width: 50%;
+    top: 44%;
+    left: 0;
+    position: absolute;
+    background-color: white;
+    border-radius: 6px;
+}
+
+#fand {
+    z-index: 3;
+    position: absolute;
+    height: 50%;
+    width: 12%;
+    background-color: white;
+    left: 44%;
+    top: 50%;
+    border-radius: 6px;
+}
+
+#fanr {
+    z-index: 3;
+    position: absolute;
+    height: 12%;
+    width: 50%;
+    background-color: white;
+    left: 50%;
+    top: 44%;
+    border-radius: 6px;
+}
+
+#fanc {
+    z-index: 4;
+    height: 18%;
+    width: 18%;
+    background-color: pink;
+    border-radius: 12%;
+    position: absolute;
+    top: 41%;
+    left: 41%;
+}
+
+@keyframes MyFan {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+#fan1 {
+    z-index: 1;
+    position: absolute;
+    top: 111%;
+    left: 45%;
+    background-color: black;
+    height: 50%;
+    width: 10%;
+}
+
+#fan2 {
+    z-index: 10;
+}
+
+#fan3 {
+    position: absolute;
+    z-index: 5;
+    top: 161%;
+    left: 33%;
+    height: 30px;
+    width: 34%;
+    border-radius: 10px 10px 0 0;
+    background-color: #111;
+}
+
+#spin {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+#book {
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    height: 18%;
+    width: 42%;
+}
+
+#b1 {
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #caa;
+    border: 2px solid black;
+}
+
+#b2 {
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 3%;
+    top: 0;
+    left: 50%;
+    background-color: black;
+}
+
+#b3 {
+    z-index: 3;
+    position: absolute;
+    top: -12%;
+    left: 0.5%;
+    height: 100%;
+    width: 49%;
+    transform: rotateZ(7deg) skew(8deg);
+    background-color: #a0a0a0;
+    border: 1px solid black;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#b4 {
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 49%;
+    left: 0.5%;
+    transform: rotate(2deg) skew(2deg);
+    background-color: #444;
+}
+
+#b5 {
+    z-index: 5;
+    position: absolute;
+    top: -12%;
+    left: 50.5%;
+    height: 100%;
+    width: 49%;
+    transform: rotate(-7deg) skew(-8deg);
+    background-color: #a0a0a0;
+    border: 1px solid black;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#b6 {
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 49%;
+    left: 50.5%;
+    transform: rotate(-2deg) skew(-2deg);
+    background-color: #444;
+}
+
+#b7 {
+    z-index: 4;
+    position: absolute;
+    top: -11%;
+    left: 50.5%;
+    height: 100%;
+    width: 49%;
+    transform: rotate(-4deg) skew(-4deg);
+    background-color: #a0a0a0;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+#b5:hover {
+    animation: NextPage 2s ease;
+}
+
+@keyframes NextPage {
+    0% {left:51.5%;transform: rotate(-7deg) skew(-8deg) rotateY(0deg);}
+    49.5% {left:28.5%;transform: rotate(-7deg) skew(-8deg) rotateY(-90deg);top:-10%;font-size:12px;}
+    50% {left:22.5%;transform: rotate(7deg) skew(8deg) rotateY(-90deg);top:-10%;font-size:0;}
+    100% {left: 1.5%;transform: rotate(7deg) skew(8deg) rotateY(-180deg);font-size:0;}
+}
+
+#fan4 {
+    position: absolute;
+    z-index: 4;
+    top: 175%;
+    left: 35%;
+    background: rgba(100, 100, 100, 0.3);
+    display: none;
+    height: 18%;
+    width: 100%;
+    transform: rotate(15deg);
+}
+
+#bookShadow {
+    z-index: 1;
+    position: absolute;
+    top: 77%;
+    left: 28%;
+    height: 18%;
+    width: 40%;
+    background: rgba(50, 50, 50, 0.3);
+    border-radius: 5px;
+    display: none;
+}
+
+
+
+        </style>
+        <title>Page Title</title>
+    </head>
+    <body id = 'body'>
+        <div id = 'heading'>STUDYING AT NIGHT</div>
+        <div id = 'bookShadow'></div>
+        <div id = 'book'>
+            <div id = 'b1'>
+                <div id = 'b2'></div>
+                <div id = 'b3'>Made By Reyaansh Jhaveri</div>
+                <div id = 'b4'></div>
+                <div id = 'b5'>A Contribution To All The Students</div>
+                <div id = 'b6'></div>
+                <div id = 'b7'></div>
+            </div>
+        </div>
+        <div id = 'table' class = 'lamp'></div>
+        <div id = 'lamp1' class = 'lamp'></div>
+        <div id = 'lamp2' class = 'lamp'></div>
+        <div id = 'lamp3' class = 'lamp'></div>
+        <div id = 'lamp4'></div>
+        <div id = 'bulb'></div>
+        <div id = 'lamp5'></div>
+        <div id = 'lamp6'></div>
+        <div id = 'fan'>
+            <div id = 'spin'>
+                <div id = 'fanu'></div>
+                <div id = 'fanl'></div>
+                <div id = 'fand'></div>
+                <div id = 'fanr'></div>
+                <div id = 'fanc'></div>
+            </div>
+            <div id = 'fan2'></div>
+            <div id = 'fan1'></div>
+            <div id = 'fan3'></div>
+            <div id = 'fan4'></div>
+        </div>
+    </body>
+</html>
